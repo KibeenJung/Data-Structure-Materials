@@ -32,6 +32,7 @@ void List::displayNodes(void)
 	std::cout << std::endl;
 }
 
+
 Node* List::insertNode(int index, float value)
 {
 	if (index < 0) return nullptr;
@@ -45,12 +46,20 @@ Node* List::insertNode(int index, float value)
 	else
 	{
 		Node* nodePtr = head;
-		for (int i = 0; nodePtr->next && i < (index - 1); i++)
+		int i;
+		for (i = 0; nodePtr->next && i < (index - 1); i++)
 		{
 			nodePtr = nodePtr->next;
 		}
-	newNode->next = nodePtr->next;
-	nodePtr->next = newNode;
+		if (i < index - 1)
+		{
+		    return appendNode(value);
+		}
+		else
+		{
+		    newNode->next = nodePtr->next;
+    	    	    nodePtr->next = newNode;    
+		}
 	}
 	return newNode;
 }
