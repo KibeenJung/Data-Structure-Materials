@@ -1,39 +1,36 @@
 /*
-출력 결과:
-
 appendNode
-1 2 3 
+3 2 1 
 insertNode
-1 2 3 4 
-1 2 3 5 4 
-1 2 3 5 4 6 
-7 1 2 3 5 4 6 
-7 8 1 2 3 5 4 6 
+3 2 1 4 
+3 2 1 5 4 
+6 3 2 1 5 4 
+7 6 3 2 1 5 4 
+7 8 6 3 2 1 5 4 
 findNode
 find: 0
 find: -1
-find: 6
 find: 7
+find: 2
 find: -1
-7 8 1 2 3 5 4 6 
+7 8 6 3 2 1 5 4 
 removeNode
 remove: 1
-7 8 1 2 3 5 6 
+7 8 6 3 2 1 4 
 remove: 1
-7 8 2 3 5 6 
+7 8 3 2 1 4 
 remove: 0
-7 8 2 3 5 6 
+7 8 3 2 1 4 
 deleteNode
 delete: 1
-7 2 3 5 6 
-delete: -1
-7 2 3 5 6 
-delete: 2
-7 2 5 6 
-7 2 5 6 1 
-find: 4
-destructor: 2 7 2 5 6 1
-
+7 3 2 1 4 
+delete: 4
+7 3 2 1 
+delete: 1
+7 2 1 
+1 7 2 1 
+find: 0
+destructor: 2 1 7 2 1
 */
 
 #include <iostream>
