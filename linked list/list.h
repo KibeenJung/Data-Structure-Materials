@@ -23,7 +23,7 @@ public:
 		head = nullptr;
 	}
 	~List(void);
-	// appendNode: 리스트의 끝에 value를 가진 노드를 추가한다.
+	// appendNode: 리스트의 헤드에 value를 가진 노드를 추가한다.
 	Node* appendNode(float value);
 	// insertNode: index 위치에 value를 가진 노드를 삽입한다. 기존의 index 위치에 있던 노드와 그 뒤에 있던 노드들은 한 칸 씩 뒤로 밀린다. index는 0부터 시작한다.
 	Node* insertNode(int index, float value);
