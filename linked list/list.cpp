@@ -11,12 +11,8 @@ Node* List::appendNode(float value)
 	}
 	else
 	{
-		Node* nodePtr = head;
-		while (nodePtr->next)
-		{	
-			nodePtr = nodePtr->next;
-		}
-		nodePtr->next = newNode;
+		newNode->next = head;
+		head = newNode;
 	}
 	return newNode;
 }
