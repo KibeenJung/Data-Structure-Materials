@@ -47,15 +47,8 @@ Node* List::insertNode(int index, float value)
 		{
 			nodePtr = nodePtr->next;
 		}
-		if (i < index - 1)
-		{
-		    return appendNode(value);
-		}
-		else
-		{
-		    newNode->next = nodePtr->next;
-    	    	    nodePtr->next = newNode;    
-		}
+		newNode->next = nodePtr->next;
+    	    	nodePtr->next = newNode;   
 	}
 	return newNode;
 }
