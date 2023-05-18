@@ -95,6 +95,24 @@ bool List::removeNode(int index)
 
 int List::deleteNode(float value)
 {
+    int index = 0;
+	for (Node* curNode = head; curNode->next; curNode = curNode->next)
+	{
+	    if (curNode->next->value == 2)
+	    {
+	        Node* delNode = curNode->next;
+	        curNode->next = curNode->next->next;
+	        delete delNode;
+	        return index;
+	    }
+	    index += 1;
+	}
+	return -1;
+}
+
+/*
+int List::deleteNode(float value)
+{
 	int index = findNode(value);
 	if (!removeNode(index))
 	{
@@ -102,6 +120,7 @@ int List::deleteNode(float value)
 	}
 	return index;
 }
+*/
 
 List::~List(void)
 {
