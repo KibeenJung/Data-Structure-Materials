@@ -96,6 +96,12 @@ bool List::removeNode(int index)
 int List::deleteNode(float value)
 {
     int index = 0;
+	if(head->value == value)
+	{
+		Node* delNode = head;
+		head = head->next;
+		return 0;
+	}
 	for (Node* curNode = head; curNode->next; curNode = curNode->next)
 	{
 	    if (curNode->next->value == value)
