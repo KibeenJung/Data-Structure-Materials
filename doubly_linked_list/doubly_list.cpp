@@ -40,7 +40,11 @@ Node* DoublyList::insertNode(int index, float value)
     if (index < 0) return nullptr;
 	Node* newNode = new Node(value, nullptr, nullptr);
 	
-	if (index == 0)
+	if (isEmpty())
+	{
+	    head = tail = newNode;
+	}
+	else if (index == 0)
 	{
 		newNode->next = head;
 		head->prev = newNode;
@@ -63,8 +67,8 @@ Node* DoublyList::insertNode(int index, float value)
 		}
 		else
 		{
-		    nodePtr->next = newNode;
-		    newNode->prev = nodePtr;
+		    tail->next = newNode;
+		    newNode->prev = tail;
 		    tail = newNode;
 		}
 	}
@@ -73,16 +77,16 @@ Node* DoublyList::insertNode(int index, float value)
 
 bool DoublyList::removeNode(int index)
 {
-	if (index < 0) return false;
+	if (index < 0 || isEmpty()) return false;
 	
 	if (index == 0)
 	{
 		Node* delNode = head;
 		head->next->prev = nullptr;
 		head = head->next;
-		if (!head)
+		if (!head || !(head->next))
 		{
-		    tail = nullptr;
+		    tail = head;
 		}
 		delete delNode;
 		return true;
@@ -96,7 +100,7 @@ bool DoublyList::removeNode(int index)
 		{
 			nodePtr = nodePtr->next;
 		}
-		if (i > index) 
+		if (i != index) 
 		{
 		    return false;
 		}
