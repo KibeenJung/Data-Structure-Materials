@@ -98,7 +98,7 @@ int List::deleteNode(float value)
     int index = 0;
 	for (Node* curNode = head; curNode->next; curNode = curNode->next)
 	{
-	    if (curNode->next->value == 2)
+	    if (curNode->next->value == value)
 	    {
 	        Node* delNode = curNode->next;
 	        curNode->next = curNode->next->next;
