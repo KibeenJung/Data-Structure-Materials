@@ -1,6 +1,6 @@
 /*
 appendNode
-3 2 1 
+3 2 1
 insertNode
 3 2 1 4 
 3 2 1 5 4 
@@ -43,8 +43,8 @@ int main()
 	DoublyList list;
 	cout << "appendNode" << endl;
 	list.appendHead(2);
-	list.appendHead(1);
-	list.appendTail(3);
+	list.appendHead(3);
+	list.appendTail(1);
 	list.displayNodes();
 
 	cout << "insertNode" << endl;
@@ -83,7 +83,7 @@ int main()
 	cout << "delete: " << list.deleteNode(3) << endl;
 	list.displayNodes();
 
-	list.appendNode(1);
+	list.appendHead(1);
 	list.displayNodes();
 	cout << "find: " << list.findNode(1) << endl;
 	list.insertNode(0, 2);
