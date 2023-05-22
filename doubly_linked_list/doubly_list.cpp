@@ -1,4 +1,7 @@
 #include "doubly_list.h"
+#include <iostream>
+
+using namespace std;
 
 Node* DoublyList::appendHead(float value)
 {
@@ -97,7 +100,7 @@ bool DoublyList::removeNode(int index)
 		{
 		    return false;
 		}
-		elif (nodePtr == tail)
+		else if (nodePtr == tail)
 		{
 		    nodePtr->prev->next = nullptr;
 		    tail = nodePtr->prev;
